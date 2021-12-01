@@ -18,6 +18,7 @@ exports.save=(req,res)=>{
     //console.log(correo+nombre+fecha_ingreso);
 }
 
+//Funcion para actualizar datos del empleado
 exports.update=(req,res)=>{
     const id_empleado=req.body.id_empleado;
     const nombre=req.body.nombre;

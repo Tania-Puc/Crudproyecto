@@ -29,6 +29,7 @@ router.get('/create', (req,res)=>{
     res.render('create');
 });
 
+//Redirige al formulario de editar
 
 router.get('/edit/:id_empleado', (req,res)=>{
     const id_empleado=req.params.id_empleado;
@@ -49,6 +50,23 @@ router.get('/edit/:id_empleado', (req,res)=>{
 
  
 });
+
+
+//Funcion de eliminar empleado
+router.get('/delete/:id_empleado', (req,res)=> {
+    const id_empleado=req.params.id_empleado;
+    conexion.query("DELETE FROM empleados WHERE id_empleado=?",[id_empleado],(error,results)=>{
+
+        if(error){
+         
+            throw error;
+
+        }else
+        {
+             res.redirect('/');       
+        }                
+    })
+})
 
 const crud=require('./controllers/crud');
 const { Router } = require('express');
