@@ -114,9 +114,9 @@ exports.getpdf = (req, res) => {
      .fontSize(10)
      .fill('#021c27')
      .text('Tania Monserrar Puc Poot', startLine2, signatureHeight + 5, {
-         columns: 1.2,
-         columnGap: 0.2,
-         height: 40.5,
+         columns: 1,
+         columnGap: 0,
+         height: 40,
          width: lineSize,
          align: 'center',});
          jumpLine(doc, 1)
