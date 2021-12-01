@@ -24,7 +24,6 @@ exports.update=(req,res)=>{
     const correo=req.body.correo;
     const fecha_ingreso=req.body.fecha_ingreso;
 
-    //console.log(fecha_ingreso);
     conexion.query("UPDATE `empleados` SET ? WHERE `empleados`.`id_empleado` = ?",[{nombre:nombre,correo:correo, fecha_ingreso:fecha_ingreso},id_empleado], (error,results)=>{
 
         if(error){
