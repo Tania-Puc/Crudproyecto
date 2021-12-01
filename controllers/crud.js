@@ -16,7 +16,6 @@ exports.save=(req,res)=>{
             res.redirect('/');
         }
     })
-    //console.log(correo+nombre+fecha_ingreso);
 }
 
 //Funcion para actualizar datos del empleado
