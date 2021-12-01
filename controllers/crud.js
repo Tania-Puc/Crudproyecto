@@ -37,7 +37,7 @@ exports.update=(req,res)=>{
     })
 }
 
-//generar cartas de recomendacion
+//GENERAR CARTAS DE RECOMENDACION DE EMPLEADOS
 exports.getpdf = (req, res) => {
     const id_empleado = req.body.id_empleado;
     const nombre = req.body.nombre;
