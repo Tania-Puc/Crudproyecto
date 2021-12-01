@@ -68,12 +68,36 @@ router.get('/delete/:id_empleado', (req,res)=> {
     })
 })
 
+//Obtine los datos para generar el pdf
+
+router.get('/getpdfempleado/:id_empleado', (req, res) => {
+    const id_empleado = req.params.id_empleado;
+    conexion.query('SELECT id_empleado, nombre, correo, date_format(fecha_ingreso, "%d %M %Y") as fecha_ingreso from empleados WHERE id_empleado= ?', [id_empleado], (error, results) => {
+        if (error) {
+            throw error;
+
+        } else {
+            if (error) {
+                throw error;
+    
+            } else {
+                res.render('getpdfempleado', { empleados: results[0] });
+    
+    
+            }
+
+        }
+    })
+
+
+})
+
 const crud=require('./controllers/crud');
 const { Router } = require('express');
 
 router.post('/save', crud.save);
 router.post('/update', crud.update);
-/*
+
 router.post('/getpdfempleado', crud.getpdf);
-*/
+
 module.exports=router;
