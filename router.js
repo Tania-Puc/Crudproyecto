@@ -22,11 +22,18 @@ router.get('/', (req,res)=>{
     })
     
 })
+
+//Redirige al formulario de crear nuevo registro
+router.get('/create', (req,res)=>{
+
+    res.render('create');
+});
+
 const crud=require('./controllers/crud');
 const { Router } = require('express');
 
-/*router.post('/save', crud.save);
-router.post('/update', crud.update);
+router.post('/save', crud.save);
+/*router.post('/update', crud.update);
 
 router.post('/getpdfempleado', crud.getpdf);
 */
